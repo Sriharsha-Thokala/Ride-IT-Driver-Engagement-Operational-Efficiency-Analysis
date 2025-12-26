@@ -1,0 +1,229 @@
+
+# 📊 RIDE IT — Driver Engagement & Operational Efficiency Analysis 
+
+## 🚀 Project Overview
+**RIDE IT** is a ride-hailing platform focused on increasing the **number of completed rides per driver** without expanding driver supply.
+
+This project analyzes:
+- Driver engagement  
+- Ride funnel efficiency  
+- Day-level and regional behavior patterns  
+
+The objective is to identify **where rides are lost in the funnel** and how **operational efficiency** can be improved through **data-driven decisions**.
+
+The analysis combines **SQL-based data modeling** with **Power BI dashboards** to transform raw operational data into **clear business insights and actionable recommendations**.
+
+---
+
+## 📅 Analysis Scope
+- **Time Period:** January 2020 – June 2020  
+- **Regions:** Germany, Spain  
+- **Data Sources:**  
+  - `Rideit_drivers`  
+  - `Rideit_drivers_activity`
+
+---
+
+## 🗂️ Data Sources Overview
+
+### A. Rideit_drivers  
+*(Driver-level table — mostly static attributes)*
+
+| Column Name | Description |
+|------------|------------|
+| Id_driver | Unique driver identifier (Primary Key) |
+| Date_registration | Driver activation date |
+| Driver_rating | Avg rating over last 100 rides (quality proxy) |
+| Gold_level_count | Number of weeks driver reached “Gold” status |
+| Receive_marketing | Marketing opt-in flag |
+| Country_code | Operating country |
+| Service_type | TAXI / PHV / BOTH |
+
+---
+
+### B. Rideit_drivers_activity  
+*(Driver-day level behavioral data)*
+
+| Column Name | Description |
+|------------|------------|
+| Id_driver | Driver identifier (Foreign Key) |
+| Active_date | Date of activity |
+| Offers | Ride requests received |
+| Bookings | Requests accepted |
+| Bookings_cancelled_by_passenger | Passenger cancellations |
+| Bookings_cancelled_by_driver | Driver cancellations |
+| Rides | Completed rides |
+
+---
+
+## 🧠 Key Business Insights
+
+### 1️⃣ Marketing Opt-In Drivers Perform Significantly Better
+Drivers who opted in to marketing communications consistently outperformed others.
+
+- **Gold awards per driver:**  
+  - Opt-in: **16.82**  
+  - Non-opt-in: **10.75**
+- **Average rides per day:**  
+  - Opt-in: **3.44**  
+  - Non-opt-in: **2.50**
+
+**Insight:**  
+Marketing opt-in is a strong proxy for **high-intent, high-value drivers**.  
+Non-opt-in drivers represent **untapped growth potential**, not poor performance.
+
+---
+
+### 2️⃣ Major Efficiency Gap in Offer → Ride Conversion
+
+**Daily averages per driver**
+- Offers: **13.06**
+- Bookings: **9.91**
+- Completed rides: **3.21**
+
+**Funnel metrics**
+- Offers → Rides conversion: **24.59%**
+- Bookings → Rides completion: **81.83%**
+
+**Insight:**  
+Execution is strong once a booking is made.  
+The main leakage occurs **before booking** due to offer quality, matching accuracy, and ETA reliability.
+
+---
+
+### 3️⃣ Strong Day-of-Week Behavioral Patterns
+
+**Driver Supply & Engagement**
+- Highest availability: Weekdays  
+- Lower engagement and higher cancellations: Weekends  
+- Best conversion: Tue–Wed (~28%)  
+- Worst conversion: Sat–Sun (~20%)
+
+**Driver Behavior**
+- Highest acceptance: Mon–Fri (31–34%)  
+- Lowest acceptance: Sat–Sun (~25%)  
+- Highest driver cancellations: Sunday (10.17%)
+
+**Passenger Behavior**
+- Highest passenger cancellations: Sunday (11.9%)  
+- Lowest cancellations: Midweek (~9.7–10%)
+
+**Insight:**  
+Weekends show lower commitment from both drivers and passengers.
+
+---
+
+### 4️⃣ COVID-19 Shock Revealed Structural Strength
+
+During March–April 2020:
+- Sharp decline in active drivers, offers, and rides  
+
+However:
+- Ride completion rate improved  
+- Driver cancellation rate decreased  
+
+**Insight:**  
+Exit of low-engagement drivers improved overall reliability, indicating **quality of supply > quantity of supply**.
+
+---
+
+### 5️⃣ Country-Level Differences Require Local Strategy
+
+| Country | Key Characteristics |
+|------|------------------|
+| Germany | Large but rigid driver base, slower recovery, underutilized supply |
+| Spain | Smaller but elastic supply, faster recovery, better demand adaptation |
+
+**Insight:**  
+A one-size-fits-all strategy does not work across markets.
+
+---
+
+## 🎯 Strategic Recommendations
+
+### 1️⃣ Convert High-Potential Non-Marketing Drivers
+**Low cost, high ROI**
+- Communicate earnings uplift, gold benefits, priority access, and rewards  
+- Improves engagement without onboarding new drivers
+
+---
+
+### 2️⃣ Improve Offer → Booking Conversion (Top Priority)
+- Improve ETA accuracy  
+- Smarter driver–passenger matching  
+- Reduce low-quality offers  
+- Acceptance-based incentives  
+
+**Outcome:** Higher bookings with existing supply
+
+---
+
+### 3️⃣ Reduce Passenger Cancellations
+- Real-time driver movement visibility  
+- Clearer ETAs  
+- Cancellation friction after grace period  
+
+**Outcome:** Higher ride completion and driver trust
+
+---
+
+### 4️⃣ Control Driver Cancellations
+- Soft warnings and penalties  
+- Faster gold status for low-cancellation drivers  
+
+**Outcome:** More reliable driver behavior, especially on weekends
+
+---
+
+### 5️⃣ Day-Specific Operating Strategy
+
+| Day Group | Focus |
+|--------|-------|
+| Tue–Thu | Maximize volume and utilization |
+| Mon & Fri | Balance growth and reliability |
+| Sat–Sun | Control quality and cancellations |
+
+---
+
+### 🌍 Country-Specific Strategy
+- **Germany:** Improve utilization and passenger reliability  
+- **Spain:** Scale demand while protecting efficiency  
+
+---
+
+## 📈 Key KPIs to Monitor
+- Offers → Rides Conversion %
+- Average Rides per Active Driver
+- Driver Cancellation Rate
+- Passenger Cancellation Rate
+- Monthly Active Driver Retention
+
+---
+
+## 🛠️ Skills & Tools Demonstrated
+
+**SQL**
+- Exploratory Data Analysis (EDA)
+- Data Cleaning and Transformations
+- Aggregations
+- Time-series analysis
+- Consolidated key metrics
+
+**Power BI**
+- Data Modeling
+- KPI dashboards
+- Trend and cohort analysis
+- DAX calculations
+
+**Business & Strategy**
+- Funnel optimization
+- Operational efficiency analysis
+- Stakeholder-focused storytelling
+- Data-driven recommendation design
+
+---
+
+## 📌 Final Takeaway
+This project demonstrates how **data-driven operational optimization** can drive growth more efficiently than supply expansion.
+
+By improving **conversion efficiency**, reducing **cancellations**, and applying **localized strategies**, RIDE IT can unlock sustainable growth while maintaining service quality and cost discipline.
