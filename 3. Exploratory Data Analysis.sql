@@ -1,7 +1,7 @@
 Create Database Ride_IT;
 Use Ride_IT;
 
-Select * from Drivers;				       -- 36771 --
+Select * from Drivers;				      -- 36771 --
 Select * From Drivers_Activity;			--  18,28,412 --
 
 
@@ -298,4 +298,5 @@ Select Year,
 		SUM(Rides_Completed) Over (Order By Year, Month) Running_Total_Rides_Completed
 
 From Time_Analysis_CTE;
+
 
